@@ -30,17 +30,34 @@ namespace CleanAppFlo
 
         // Fonction qui supprime le contenue d'un dossier
 
-        public void DeleteDir(DirectoryInfo dir)
+        public void ClearTempData(DirectoryInfo dir)
         {
-            foreach(FileInfo file in dir.GetFiles())
+            foreach (FileInfo file in dir.GetFiles())
             {
                 try
                 {
-
+                    file.Delete();
+                    Console.WriteLine(file.FullName);
+                    
                 }
                 catch (Exception ex)
                 {
-                   
+                    Console.WriteLine(ex);
+                    continue;
+                }
+            }
+
+            foreach (DirectoryInfo di in dir.GetDirectories())
+            {
+                try
+                {
+                    di.Delete();
+                    Console.WriteLine(di.FullName);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                    continue;
                 }
             }
         }
@@ -73,6 +90,27 @@ namespace CleanAppFlo
 
         private void Button_Analyser_Click(object sender, RoutedEventArgs e)
         {
+            AnalyseFolders();
+        }
+
+        public void AnalyseFolders()
+        {
+            Console.WriteLine("Début de l'analyse");
+            long totalSize = 0;
+
+            try
+            {
+                totalSize += DirSize(winTemp) / 1000000;
+                totalSize += DirSize(appTemp) / 1000000;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+  
+            }
+
+            espace.Content = totalSize + " Mb";
+            date.Content = DateTime.Today.ToString("dd/MM/yyyy");
         }
     }
 }
