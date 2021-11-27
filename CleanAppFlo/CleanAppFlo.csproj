@@ -18,19 +18,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="clean.png">
+    <Resource Include="images\clean.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="github.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="history.png">
+    <Resource Include="images\history.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="maj.png">
+    <Resource Include="images\maj.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="web.png">
+    <Resource Include="images\web.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

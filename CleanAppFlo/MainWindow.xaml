@@ -24,7 +24,7 @@
         <!--Center-->
         <Button x:Name="btnClean" HorizontalAlignment="Left" Margin="45,240,0,0" VerticalAlignment="Top" Height="120" Width="400" Foreground="#FFFDFDFD" Background="#FF03B5AA" BorderThickness="4,4,4,4" FontFamily="Lucida Sans" FontSize="20" FontWeight="Bold" Click="Button_Click_Clean">
             <StackPanel>
-                <Image x:Name="imgCleanButton" Height="64" Stretch="Fill" Source="clean.png" Width="64"/>
+                <Image x:Name="imgCleanButton" Height="64" Stretch="Fill" Source="images/clean.png" Width="64"/>
                 <Label x:Name="labelCleanButton" Padding="0" Foreground="White" >NETTOYER</Label>
             </StackPanel>
 
@@ -40,7 +40,7 @@
 
         <Button  HorizontalAlignment="Left" Margin="45,402,0,0" VerticalAlignment="Top" Height="120" Width="400" Foreground="#FFFDFDFD" Background="#FF03B5AA" BorderThickness="4,4,4,4" FontFamily="Lucida Sans" FontSize="20" FontWeight="Bold" Click="Button_histo_Click">
             <StackPanel>
-                <Image Height="64" Stretch="Fill" Source="history.png" Width="64"/>
+                <Image Height="64" Stretch="Fill" Source="images/history.png" Width="64"/>
                 <Label Padding="0" Foreground="White" >HISTORIQUE</Label>
             </StackPanel>
             <Button.BorderBrush>
@@ -50,7 +50,7 @@
 
         <Button HorizontalAlignment="Left" Margin="543,402,0,0" VerticalAlignment="Top" Height="120" Width="400" Foreground="#FFFDFDFD" Background="#FF03B5AA" BorderThickness="4,4,4,4" FontFamily="Lucida Sans" FontSize="20" FontWeight="Bold" Click="Button_Web_Click">
             <StackPanel>
-                <Image Height="64" Stretch="Fill" Source="web.png" Width="64"/>
+                <Image Height="64" Stretch="Fill" Source="images/web.png" Width="64"/>
                 <Label Padding="0" Foreground="White" >SITE WEB</Label>
             </StackPanel>
             <Button.BorderBrush>
@@ -60,7 +60,7 @@
 
         <Button HorizontalAlignment="Left" Margin="543,240,0,0" VerticalAlignment="Top" Height="120" Width="400" Foreground="#FFFDFDFD" Background="#FF03B5AA" BorderThickness="4,4,4,4" FontFamily="Lucida Sans" FontSize="20" FontWeight="Bold" Click="Button_Update_Click">
             <StackPanel>
-                <Image Height="64" Stretch="Fill" Source="maj.png" Width="64"/>
+                <Image Height="64" Stretch="Fill" Source="images/maj.png" Width="64"/>
                 <Label Padding="0" Foreground="White" >UPDATE</Label>
             </StackPanel>
             <Button.BorderBrush>
