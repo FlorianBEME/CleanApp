@@ -5,6 +5,7 @@ using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Net;
 
 namespace CleanAppFlo
 {
@@ -25,7 +26,27 @@ namespace CleanAppFlo
             isAnalyse = false;
             Debug.WriteLine(winTemp);
             Debug.WriteLine(appTemp);
+            CheckActu();
 
+
+        }
+
+        public void CheckActu()
+        {
+            string url = "http://localhost/site/actu.txt";
+
+            using (WebClient client = new WebClient())
+            {
+                string actuInWeb = client.DownloadString(url);
+
+                if (actuInWeb != String.Empty)
+                {
+                    actu.Content = actuInWeb;
+                    actu.Visibility = Visibility.Visible;
+                    actuBandeau.Visibility = Visibility.Visible;
+
+                }
+            }
 
         }
 

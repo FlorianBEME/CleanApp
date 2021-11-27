@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CleanAppFlo"
         mc:Ignorable="d"
+        SizeToContent="WidthAndHeight"
         Title="Logiciel nettoyage" Height="700" Width="1000" ResizeMode="NoResize" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" WindowStartupLocation="CenterScreen">
     <Grid>
         <Rectangle Height="170" VerticalAlignment="Top" Fill="#FF03B5AA"/>
@@ -70,11 +71,12 @@
 
 
         <!--Footer-->
-        <Rectangle HorizontalAlignment="Center" Height="62" Margin="0,622,0,0"  Fill="#D7D0C8" VerticalAlignment="Top" Width="1000"/>
-        <Label x:Name="titre_Copy1" Content="Copyright @ 2021 - FlorianBEME" HorizontalAlignment="Center" Margin="0,624,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Lucida Sans" FontWeight="Normal" Width="200" Height="29" RenderTransformOrigin="0.595,2.518"/>
+        <Rectangle HorizontalAlignment="Center" Height="87"  Fill="#D7D0C8" VerticalAlignment="Top" Width="1000" Margin="0,597,0,0"/>
+        <Label x:Name="titre_Copy1" Content="Copyright @ 2021 - FlorianBEME" HorizontalAlignment="Center" Margin="0,609,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Lucida Sans" FontWeight="Normal" Width="200" Height="29" RenderTransformOrigin="0.595,2.518"/>
 
-        <Rectangle Visibility="Hidden" HorizontalAlignment="Center" Height="31" Margin="0,653,0,0"  Fill="#FFFF895C" VerticalAlignment="Top" Width="1000"/>
-        <Label Visibility="Hidden" x:Name="actu" Content="actu" HorizontalAlignment="Center" Margin="0,658,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Lucida Sans" FontWeight="Normal" Width="36" Height="29" RenderTransformOrigin="0.595,2.518"/>
+
+        <Rectangle Visibility="Hidden"  x:Name="actuBandeau" HorizontalAlignment="Center" Height="43" Margin="0,643,0,0"  Fill="#FFFF895C" VerticalAlignment="Top" Width="1000"/>
+        <Label Visibility="Hidden"   x:Name="actu" Content="actu" HorizontalAlignment="Center" Margin="0,648,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Lucida Sans" FontWeight="Normal" Width="960" Height="30" RenderTransformOrigin="0.595,2.518"/>
 
 
 
