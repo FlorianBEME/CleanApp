@@ -23,6 +23,9 @@ namespace CleanAppFlo
             winTemp = new DirectoryInfo(@"C:\Windows\Temp");
             appTemp = new DirectoryInfo(Path.GetTempPath());
             isAnalyse = false;
+            Debug.WriteLine(winTemp);
+            Debug.WriteLine(appTemp);
+
 
         }
 
@@ -34,33 +37,32 @@ namespace CleanAppFlo
 
         // Fonction qui supprime le contenue d'un dossier
 
-        public void ClearTempData(DirectoryInfo dir)
+        public void ClearTempData(DirectoryInfo di)
         {
-            foreach (FileInfo file in dir.GetFiles())
+            foreach (FileInfo file in di.GetFiles())
             {
                 try
                 {
                     file.Delete();
                     Console.WriteLine(file.FullName);
-                    
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex);
+                    Debug.WriteLine(ex);
                     continue;
                 }
             }
 
-            foreach (DirectoryInfo di in dir.GetDirectories())
+            foreach (DirectoryInfo dir in di.GetDirectories())
             {
                 try
                 {
-                    di.Delete();
-                    Console.WriteLine(di.FullName);
+                    dir.Delete(true);
+                    Console.WriteLine(dir.FullName);
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex);
+                    Debug.WriteLine(ex);
                     continue;
                 }
             }
@@ -87,7 +89,7 @@ namespace CleanAppFlo
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Erreur: " + ex.Message);
+                Debug.WriteLine("Erreur: " + ex.Message);
             }
            
         }
@@ -100,7 +102,7 @@ namespace CleanAppFlo
 
         public void AnalyseFolders()
         {
-            Console.WriteLine("Début de l'analyse");
+            Debug.WriteLine("Début de l'analyse");
             long totalSize = 0;
 
             try
@@ -110,7 +112,7 @@ namespace CleanAppFlo
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
+                Debug.WriteLine(ex);
   
             }
 
@@ -132,7 +134,7 @@ namespace CleanAppFlo
 
             if (isAnalyse)
             {
-                Console.WriteLine("Nettoyage en cours...");
+                Debug.WriteLine("Nettoyage en cours...");
                 labelCleanButton.Content = "Nettoyage en cours...";
                 await WaitMethod(2000);
 
@@ -142,7 +144,7 @@ namespace CleanAppFlo
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex);
+                    Debug.WriteLine(ex);
                 }
 
                 try
@@ -151,7 +153,7 @@ namespace CleanAppFlo
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex);
+                    Debug.WriteLine(ex);
                 }
 
 
