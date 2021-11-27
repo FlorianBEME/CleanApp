@@ -13,7 +13,7 @@
         <Label Content="Espace à nettoyer: " HorizontalAlignment="Left" Margin="20,117,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Lucida Sans" FontSize="22" FontWeight="Bold" FontStyle="Normal" Height="36" Width="222"/>
         <Label Content="Dernière analyse: " HorizontalAlignment="Left" Margin="20,85,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Lucida Sans" FontSize="22" FontWeight="Bold" FontStyle="Normal" Height="36" Width="213" RenderTransformOrigin="0.479,0.612"/>
         <Label x:Name="date" Content="Jamais " HorizontalAlignment="Left" Margin="297,85,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Lucida Sans" FontSize="22" FontWeight="Normal" FontStyle="Normal" Height="36" Width="381" RenderTransformOrigin="0.326,0.946"/>
-        <Label x:Name="espace" Content="??? Mb" HorizontalAlignment="Left" Margin="297,117,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Lucida Sans" FontSize="22" FontWeight="Normal" FontStyle="Normal" Height="36" Width="381"/>
+        <Label x:Name="espace" Content="0 Mb" HorizontalAlignment="Left" Margin="297,117,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Lucida Sans" FontSize="22" FontWeight="Normal" FontStyle="Normal" Height="36" Width="381"/>
         <Button Content="Analyser" Background="#FF03B5AA" Foreground="#FFFDFDFD" BorderThickness="4,4,4,4" FontFamily="Lucida Sans" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Margin="714,39,0,0" VerticalAlignment="Top" Height="101" Width="252" Click="Button_Analyser_Click">
             <Button.BorderBrush>
                 <SolidColorBrush Color="#FFFDE8E9" Opacity="1"/>
@@ -22,10 +22,10 @@
         <Rectangle HorizontalAlignment="Center" Height="19" Margin="0,170,0,0" VerticalAlignment="Top" Width="1000" Fill="#FFBFBFBF"/>
 
         <!--Center-->
-        <Button HorizontalAlignment="Left" Margin="45,240,0,0" VerticalAlignment="Top" Height="120" Width="400" Foreground="#FFFDFDFD" Background="#FF03B5AA" BorderThickness="4,4,4,4" FontFamily="Lucida Sans" FontSize="20" FontWeight="Bold">
+        <Button x:Name="btnClean" HorizontalAlignment="Left" Margin="45,240,0,0" VerticalAlignment="Top" Height="120" Width="400" Foreground="#FFFDFDFD" Background="#FF03B5AA" BorderThickness="4,4,4,4" FontFamily="Lucida Sans" FontSize="20" FontWeight="Bold" Click="Button_Click_Clean">
             <StackPanel>
-                <Image Height="64" Stretch="Fill" Source="clean.png" Width="64"/>
-                <Label Padding="0" Foreground="White" >NETTOYER</Label>
+                <Image x:Name="imgCleanButton" Height="64" Stretch="Fill" Source="clean.png" Width="64"/>
+                <Label x:Name="labelCleanButton" Padding="0" Foreground="White" >NETTOYER</Label>
             </StackPanel>
 
             <Button.BorderBrush>

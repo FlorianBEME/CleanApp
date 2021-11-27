@@ -3,6 +3,8 @@ using System.Diagnostics;
 using System.IO;
 using System;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace CleanAppFlo
 {
@@ -14,11 +16,13 @@ namespace CleanAppFlo
 
         public DirectoryInfo winTemp;
         public DirectoryInfo appTemp;
+        public bool isAnalyse;
         public MainWindow()
         {
             InitializeComponent();
             winTemp = new DirectoryInfo(@"C:\Windows\Temp");
-            appTemp = new DirectoryInfo(System.IO.Path.GetTempPath());
+            appTemp = new DirectoryInfo(Path.GetTempPath());
+            isAnalyse = false;
 
         }
 
@@ -91,6 +95,7 @@ namespace CleanAppFlo
         private void Button_Analyser_Click(object sender, RoutedEventArgs e)
         {
             AnalyseFolders();
+            isAnalyse = true;
         }
 
         public void AnalyseFolders()
@@ -111,6 +116,54 @@ namespace CleanAppFlo
 
             espace.Content = totalSize + " Mb";
             date.Content = DateTime.Today.ToString("dd/MM/yyyy");
+            if (totalSize > 0)
+            {
+                labelCleanButton.Content = "NETTOYER";
+            }
+        }
+        async System.Threading.Tasks.Task WaitMethod(int delay)
+        {
+            await System.Threading.Tasks.Task.Delay(delay);
+        }
+
+       async private void Button_Click_Clean(object sender, RoutedEventArgs e)
+        {
+
+
+            if (isAnalyse)
+            {
+                Console.WriteLine("Nettoyage en cours...");
+                labelCleanButton.Content = "Nettoyage en cours...";
+                await WaitMethod(2000);
+
+                try
+                {
+                    ClearTempData(winTemp);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+
+                try
+                {
+                    ClearTempData(appTemp);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+
+
+                /*AnalyseFolders();*/
+
+                espace.Content = "0 Mb";
+                labelCleanButton.Content = "NETTOYAGE TERMINER";
+            }
+            else
+            {
+                MessageBox.Show("Veuillez procéder à l'analyse...", "Attention", MessageBoxButton.OK ,MessageBoxImage.Information);
+            }
         }
     }
 }
